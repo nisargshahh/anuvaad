@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuvaad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-50 text-gray-800">
+    <div class="container flex items-center justify-center h-screen">
+        <div class="bg-white shadow-lg border-2 border-gray-300 rounded-lg p-6 max-w-md w-full mx-10">
+            <h1 class="text-3xl font-semibold text-gray-700 text-center mb-4">अनुवाद</h1>
+
+            <textarea
+                class="w-full h-32 p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 resize-none bg-gray-100 placeholder-gray-500"
+                placeholder="Type your text here..."></textarea>
+            <div class="mt-4">
+                <label for="languageSelect" class="block text-sm font-medium text-gray-700 mb-2">Select Language</label>
+                <select id="languageSelect"
+                    class="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 bg-gray-100"></select>
+            </div>
+
+            <div class="mt-4">
+                <label for="selectVoice" class="block text-sm font-medium text-gray-700 mb-2">Select Voice</label>
+                <select id="selectVoice"
+                    class="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 bg-gray-100">
+                    <option value="default">Default Voice</option>
+                    <option value="voice1">Voice 1</option>
+                    <option value="voice2">Voice 2</option>
+                </select>
+            </div>
+
+            <button
+                class="mt-6 w-full bg-gray-700 hover:bg-gray-600 text-white font-medium py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+                id="playButton">
+                Play Text
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
