@@ -37,15 +37,29 @@
                     <option value="voice2">Voice 2</option>
                 </select>
             </div>
-
+            <label for="translatedText" class=" mt-4 block text-sm font-medium text-gray-700
+            mb-2">Translated Text</label>
+            <div id='displayTText'
+                class="flex flex-col text-left items-center justify-center border-2 border-gray-300 rounded-lg p-3">
+                <h3 id='translated-t' class="text-gray-700 text-m font-medium">You'll see the
+                    translated text here.</h3>
+            </div>
+            <label for="pronounciationT" class=" mt-4 block text-sm font-medium text-gray-700
+            mb-2">Pronounciation</label>
+            <div id = "pronounciationT" class="flex flex-col text-left items-center justify-center border-2 border-gray-300 rounded-lg p-3">
+                <h3 id="pronounciation-t" class="text-gray-500 text-m font-medium">This is the
+                    pronounciation.</h3>
+            </div>
             <button
                 class="mt-6 w-full bg-gray-700 hover:bg-gray-600 text-white font-medium py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
                 id="playButton">
                 Play Text
             </button>
+
+
         </div>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>

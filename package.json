@@ -13,6 +13,7 @@
     "dotenv": "^16.4.7"
   },
   "dependencies": {
-    "@google-cloud/text-to-speech": "^5.8.0"
+    "@google-cloud/text-to-speech": "^5.8.0",
+    "transliteration": "^2.3.5"
   }
 }

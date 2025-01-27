@@ -1,7 +1,11 @@
+import {transliterate as tr} from 'https://cdn.jsdelivr.net/npm/transliteration@2.3.5/+esm'
 const selectVoice = document.querySelector("#selectVoice");
 const platBtn = document.querySelector("#playButton");
 const textInp = document.querySelector("textarea");
 const languageSelect = document.querySelector("#languageSelect");
+const displayTText = document.querySelector("#displayTText");
+const pronunciationT = document.querySelector("#pronounciationT");
+
 
 const languages = [
   { code: "en-IN", name: "English (India)" },
@@ -27,7 +31,6 @@ const languages = [
   { code: "ar-SA", name: "Arabic" },
   { code: "it-IT", name: "Italian" },
 ];
-
 
 function loadLang() {
   languageSelect.innerHTML = languages
@@ -71,12 +74,26 @@ async function translateText(text, targetLang) {
     }
 
     const data = await response.json();
-    return data.data.translations[0].translatedText;
+    const translatedText = data.data.translations[0].translatedText;
+    const pronunciation = tr(translatedText) || "No pronunciation available";
+
+    return { translatedText, pronunciation };
   } catch (error) {
     console.error("Translation Error: ", error);
     alert("Failed to translate text");
-    return text;
+    return {
+      translatedText: text,
+      pronunciation: "No pronunciation available",
+    };
   }
+}
+
+function displayTranslatedText(translatedText, pronunciation) {
+  const tt = displayTText.querySelector("#translated-t");
+  const pt = pronunciationT.querySelector("#pronounciation-t");
+
+  tt.textContent = translatedText;
+  pt.textContent = pronunciation;
 }
 
 function playText(text, voiceIndex) {
@@ -97,7 +114,11 @@ platBtn.addEventListener("click", async () => {
   }
 
   try {
-    const translatedText = await translateText(text, targetLang);
+    const { translatedText, pronunciation } = await translateText(
+      text,
+      targetLang
+    );
+    displayTranslatedText(translatedText, pronunciation);
     playText(translatedText, selectedVoiceIndex);
   } catch (error) {
     console.error("Error during processing: ", error);
