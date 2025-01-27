@@ -4,14 +4,30 @@ const textInp = document.querySelector("textarea");
 const languageSelect = document.querySelector("#languageSelect");
 
 const languages = [
-  { code: "en", name: "English" },
-  { code: "hi", name: "Hindi" },
-  { code: "es", name: "Spanish" },
-  { code: "zh", name: "Chinese (Simplified)" },
-  { code: "fr", name: "French" },
-  { code: "de", name: "German" },
-  { code: "ja", name: "Japanese" },
+  { code: "en-IN", name: "English (India)" },
+  { code: "hi-IN", name: "Hindi" },
+  { code: "ta-IN", name: "Tamil" },
+  { code: "te-IN", name: "Telugu" },
+  { code: "kn-IN", name: "Kannada" },
+  { code: "ml-IN", name: "Malayalam" },
+  { code: "mr-IN", name: "Marathi" },
+  { code: "bn-IN", name: "Bengali" },
+  { code: "gu-IN", name: "Gujarati" },
+  { code: "pa-IN", name: "Punjabi" },
+  { code: "en-US", name: "English (US)" },
+  { code: "en-GB", name: "English (UK)" },
+  { code: "es-ES", name: "Spanish" },
+  { code: "zh-CN", name: "Chinese (Simplified)" },
+  { code: "zh-TW", name: "Chinese (Traditional)" },
+  { code: "fr-FR", name: "French" },
+  { code: "de-DE", name: "German" },
+  { code: "ja-JP", name: "Japanese" },
+  { code: "ko-KR", name: "Korean" },
+  { code: "ru-RU", name: "Russian" },
+  { code: "ar-SA", name: "Arabic" },
+  { code: "it-IT", name: "Italian" },
 ];
+
 
 function loadLang() {
   languageSelect.innerHTML = languages
